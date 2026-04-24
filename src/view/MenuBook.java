@@ -6,7 +6,6 @@ package view;
 
 import controller.BookController;
 
-
 /**
  *
  * @author steph
@@ -15,8 +14,10 @@ public class MenuBook extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(MenuBook.class.getName());
     private BookController bc;
+
     /**
      * Creates new form MenuLibro
+     *
      * @param bc
      */
     public MenuBook(BookController bc) {
@@ -94,7 +95,11 @@ public class MenuBook extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form 
-        //controller
+         */
+        
+        BookController bc = new BookController();
+        MenuBook mb = new MenuBook(bc);
+        mb.setVisible(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
