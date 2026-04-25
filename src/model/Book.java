@@ -13,15 +13,26 @@ import java.util.Objects;
  */
 public class Book {
 
+    private String ISBN;
     private String title;
     private ArrayList<String> authors = new ArrayList<>();
     private double price;
     private int quantityInInventory;
 
-    public Book(String title, double price, int quantityInInventory) {
+    public Book(String ISBN, String title, ArrayList<String> authors, double price, int quantityInInventory) {
+        this.ISBN = ISBN;
         this.title = title;
+        this.authors = authors;
         this.price = price;
         this.quantityInInventory = quantityInInventory;
+    }
+
+    public String getISBN() {
+        return ISBN;
+    }
+
+    public void setISBN(String ISBN) {
+        this.ISBN = ISBN;
     }
 
     public String getTitle() {
@@ -58,13 +69,16 @@ public class Book {
 
     @Override
     public String toString() {
-        return title + ";" + authors + ";" + price + ";" + quantityInInventory;
+        return ISBN + ";" + title + ";" + authors + ";" + price + ";" + quantityInInventory;
     }
 
+    //if a book has the same title but different isbn, they're not the same book
+    //it compares the title and the isbn
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 11 * hash + Objects.hashCode(this.title);
+        int hash = 3;
+        hash = 29 * hash + Objects.hashCode(this.ISBN);
+        hash = 29 * hash + Objects.hashCode(this.title);
         return hash;
     }
 
@@ -80,6 +94,9 @@ public class Book {
             return false;
         }
         final Book other = (Book) obj;
+        if (!Objects.equals(this.ISBN, other.ISBN)) {
+            return false;
+        }
         return Objects.equals(this.title, other.title);
     }
 
