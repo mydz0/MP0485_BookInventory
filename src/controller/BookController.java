@@ -4,10 +4,15 @@
  */
 package controller;
 
+import java.util.ArrayList;
+import model.Book;
+
 /**
  *
  * @author steph
  */
 public class BookController {
-    
+
+    private static ArrayList<Book> books = new ArrayList<>();
+
 }
