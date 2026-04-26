@@ -24,7 +24,7 @@ public class MenuBook extends javax.swing.JFrame {
         this.bc = bc;
         initComponents();
     }
-
+  
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -41,6 +41,11 @@ public class MenuBook extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jButtonAdd.setText("Add");
+        jButtonAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAddActionPerformed(evt);
+            }
+        });
 
         jButtonUpdate.setText("Update");
 
@@ -73,6 +78,13 @@ public class MenuBook extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButtonAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        AddBook ab = new AddBook(this, rootPaneCheckingEnabled, bc);
+        ab.setVisible(true);
+    }//GEN-LAST:event_jButtonAddActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -96,8 +108,9 @@ public class MenuBook extends javax.swing.JFrame {
 
         /* Create and display the form 
          */
-        
+        //inside string it recieves the isdn, and book (object)
         BookController bc = new BookController();
+        BookController.load();
         MenuBook mb = new MenuBook(bc);
         mb.setVisible(true);
     }
