@@ -13,15 +13,15 @@ import java.util.Objects;
  */
 public class Book {
 
-    private String ISBN;
     private String title;
+    private String ISBN;
     private ArrayList<String> authors = new ArrayList<>();
     private double price;
     private int quantityInInventory;
 
-    public Book(String ISBN, String title, ArrayList<String> authors, double price, int quantityInInventory) {
-        this.ISBN = ISBN;
+    public Book(String title, String ISBN, ArrayList<String> authors, double price, int quantityInInventory) {
         this.title = title;
+        this.ISBN = ISBN;
         this.authors = authors;
         this.price = price;
         this.quantityInInventory = quantityInInventory;
