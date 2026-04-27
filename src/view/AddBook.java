@@ -136,21 +136,35 @@ public class AddBook extends javax.swing.JDialog {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        String title = jTextFieldTitle.getText();
-        String ISBN = jTextFieldISBN.getText();
-        String authors = jTextFieldAuthors.getText();
-        String priceT = jTextFieldPrice.getText();
-        String quant = jTextFieldQuantity.getText();
+        try {
+            String title = jTextFieldTitle.getText();
+            String ISBN = jTextFieldISBN.getText();
+            String authors = jTextFieldAuthors.getText();
+            String priceT = jTextFieldPrice.getText();
+            String quantT = jTextFieldQuantity.getText();
 
-        if (title.isEmpty() | ISBN.isEmpty() | authors.isEmpty() | priceT.isEmpty() | quant.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "All fields are requiered");
+            if (title.isEmpty() | ISBN.isEmpty() | authors.isEmpty() | priceT.isEmpty() | quantT.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "All fields are requiered");
+                return;
+            }
+
+            double price = Double.parseDouble(priceT);
+            int quant = Integer.parseInt(quantT);
+
+            if (price < 1) {
+                JOptionPane.showMessageDialog(null, "Value must be above 0");
+                return;
+            }
+
+            ArrayList<String> authorsL = new ArrayList<>();
+            authorsL.add(authors);
+
+            Book newBook = new Book(title, ISBN, authorsL, price, quant);
+            BookController.addBook(newBook);
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Value must be numeric");
         }
-
-        ArrayList<String> authorsL = new ArrayList<>();
-        authorsL.add(authors);
-
-        Book newBook = new Book(title, ISBN, authorsL, Double.parseDouble(priceT), Integer.parseInt(quant));
-        BookController.addBook(newBook);
 
 
     }//GEN-LAST:event_jButton1ActionPerformed
