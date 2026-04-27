@@ -74,11 +74,11 @@ public class Book {
 
     //if a book has the same title but different isbn, they're not the same book
     //it compares the title and the isbn
+
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 29 * hash + Objects.hashCode(this.ISBN);
-        hash = 29 * hash + Objects.hashCode(this.title);
+        hash = 19 * hash + Objects.hashCode(this.title);
         return hash;
     }
 
@@ -94,10 +94,8 @@ public class Book {
             return false;
         }
         final Book other = (Book) obj;
-        if (!Objects.equals(this.ISBN, other.ISBN)) {
-            return false;
-        }
         return Objects.equals(this.title, other.title);
     }
+
 
 }
