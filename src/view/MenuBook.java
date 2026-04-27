@@ -24,7 +24,7 @@ public class MenuBook extends javax.swing.JFrame {
         this.bc = bc;
         initComponents();
     }
-  
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
