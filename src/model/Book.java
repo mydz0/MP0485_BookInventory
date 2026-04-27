@@ -69,7 +69,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return ISBN + ";" + title + ";" + authors + ";" + price + ";" + quantityInInventory;
+        return ISBN + ";" + title + ";" + String.join(",", authors) + ";" + price + ";" + quantityInInventory;
     }
 
     //if a book has the same title but different isbn, they're not the same book
