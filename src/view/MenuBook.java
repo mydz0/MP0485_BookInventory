@@ -48,6 +48,11 @@ public class MenuBook extends javax.swing.JFrame {
         });
 
         jButtonUpdate.setText("Update");
+        jButtonUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonUpdateActionPerformed(evt);
+            }
+        });
 
         jButtonDelete.setText("Delete");
 
@@ -84,6 +89,13 @@ public class MenuBook extends javax.swing.JFrame {
         AddBook ab = new AddBook(this, rootPaneCheckingEnabled, bc);
         ab.setVisible(true);
     }//GEN-LAST:event_jButtonAddActionPerformed
+
+    private void jButtonUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUpdateActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        UpdateBook ub = new UpdateBook(this, rootPaneCheckingEnabled, bc);
+        ub.setVisible(true);
+    }//GEN-LAST:event_jButtonUpdateActionPerformed
 
     /**
      * @param args the command line arguments
