@@ -55,6 +55,11 @@ public class MenuBook extends javax.swing.JFrame {
         });
 
         jButtonDelete.setText("Delete");
+        jButtonDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDeleteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -96,6 +101,13 @@ public class MenuBook extends javax.swing.JFrame {
         UpdateBook ub = new UpdateBook(this, rootPaneCheckingEnabled, bc);
         ub.setVisible(true);
     }//GEN-LAST:event_jButtonUpdateActionPerformed
+
+    private void jButtonDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDeleteActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        DeleteBook db = new DeleteBook(this, rootPaneCheckingEnabled, bc);
+        db.setVisible(true);
+    }//GEN-LAST:event_jButtonDeleteActionPerformed
 
     /**
      * @param args the command line arguments
