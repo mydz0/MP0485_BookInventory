@@ -87,14 +87,14 @@ public class DeleteBook extends javax.swing.JDialog {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        String title = jTextFieldTitle.getText();
+        String ISBN = jTextFieldTitle.getText();
 
-        if (title.isEmpty()) {
+        if (ISBN.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Field required");
             return;
         }
 
-        BookController.deleteBook(title);
+        BookController.deleteBook(ISBN);
 
     }//GEN-LAST:event_jButton1ActionPerformed
 

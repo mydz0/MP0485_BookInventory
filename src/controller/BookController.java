@@ -47,13 +47,13 @@ public class BookController {
 //    . Si existe, solicita al usuario ingresar el nuevo precio y la cantidad en inventario del libro ,
 //            y actualiza los valores correspondientes
 //    . Si no existe , muestra un mensaje "El libro no existe".
-    public static void updateBook(String title, double newPrice, int quantity) {
+    public static void updateBook(String ISBN, double newPrice, int quantity) {
         //check if hte book exists
-        if (!bookInventory.containsKey(title)) {
+        if (!bookInventory.containsKey(ISBN)) {
             JOptionPane.showMessageDialog(null, "Book not found");
         }
 
-        Book bookUpdate = bookInventory.get(title);
+        Book bookUpdate = bookInventory.get(ISBN);
         bookUpdate.setPrice(newPrice);
         bookUpdate.setQuantityInInventory(quantity);
     }
@@ -61,12 +61,12 @@ public class BookController {
 //    Eliminar libro: Solicita al usuario ingresar el título del libro a eliminar. Verifica si el libro existe en
 //la lista. Si existe, elimina el libro de inventarioLibros. Si no existe, muestra un mensaje "El libro no
 //existe".
-    public static void deleteBook(String title) {
-        if (!bookInventory.containsKey(title)) {
+    public static void deleteBook(String titulo) {
+        if (!bookInventory.containsKey(titulo)) {
             JOptionPane.showMessageDialog(null, "Book not found");
         }
 
-        bookInventory.remove(title);
+        bookInventory.remove(titulo);
     }
 
     

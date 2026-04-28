@@ -39,7 +39,7 @@ public class UpdateBook extends javax.swing.JDialog {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jTextFieldTitle = new javax.swing.JTextField();
+        jTextFieldISBN = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jTextFieldNewPrice = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -53,7 +53,7 @@ public class UpdateBook extends javax.swing.JDialog {
             }
         });
 
-        jLabel1.setText("Title");
+        jLabel1.setText("ISBN");
 
         jLabel2.setText("New Price");
 
@@ -79,7 +79,7 @@ public class UpdateBook extends javax.swing.JDialog {
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldNewPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldISBN, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(36, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -88,7 +88,7 @@ public class UpdateBook extends javax.swing.JDialog {
                 .addGap(28, 28, 28)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextFieldTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTextFieldISBN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -108,11 +108,11 @@ public class UpdateBook extends javax.swing.JDialog {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         try {
-            String title = jTextFieldTitle.getText();
+            String ISBN = jTextFieldISBN.getText();
             String newPriceT = jTextFieldNewPrice.getText();
             String quantityT = jTextFieldQuantity.getText();
 
-            if (title.isEmpty() | newPriceT.isEmpty() | quantityT.isEmpty()) {
+            if (ISBN.isEmpty() | newPriceT.isEmpty() | quantityT.isEmpty()) {
                 JOptionPane.showMessageDialog(null, "All fields are required");
                 return;
             }
@@ -125,7 +125,7 @@ public class UpdateBook extends javax.swing.JDialog {
                 return;
             }
             
-            BookController.updateBook(title, newPrice, quantity);
+            BookController.updateBook(ISBN, newPrice, quantity);
 
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Value must be numeric");
@@ -145,8 +145,8 @@ public class UpdateBook extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JTextField jTextFieldISBN;
     private javax.swing.JTextField jTextFieldNewPrice;
     private javax.swing.JTextField jTextFieldQuantity;
-    private javax.swing.JTextField jTextFieldTitle;
     // End of variables declaration//GEN-END:variables
 }
