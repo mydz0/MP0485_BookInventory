@@ -61,12 +61,14 @@ public class BookController {
 //    Eliminar libro: Solicita al usuario ingresar el título del libro a eliminar. Verifica si el libro existe en
 //la lista. Si existe, elimina el libro de inventarioLibros. Si no existe, muestra un mensaje "El libro no
 //existe".
-    public static void deleteBook(String titulo) {
-        if (!bookInventory.containsKey(titulo)) {
+    public static void deleteBook(String ISBN) {
+        if (!bookInventory.containsKey(ISBN)) {
             JOptionPane.showMessageDialog(null, "Book not found");
+            return;
         }
 
-        bookInventory.remove(titulo);
+        bookInventory.remove(ISBN);
+        JOptionPane.showMessageDialog(null, "Book deleted successfully");
     }
 
     
