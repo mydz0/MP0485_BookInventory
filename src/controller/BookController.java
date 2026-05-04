@@ -71,6 +71,4 @@ public class BookController {
         JOptionPane.showMessageDialog(null, "Book deleted successfully");
     }
 
-    
-    
 }

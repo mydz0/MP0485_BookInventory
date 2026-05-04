@@ -76,6 +76,7 @@ public class FileBookInventory {
             }
 
             return loadBooks;
+            
         } catch (FileNotFoundException e) {
             // El archivo no existe todavía, simplemente retorna lista vacía
             return loadBooks;
