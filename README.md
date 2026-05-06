@@ -110,14 +110,14 @@ Implement the graphical interface using JSwing, displaying a menu with the follo
 
 Books are stored in `book.txt` with the following structure:
 ```
-ISBN|Title|Author1,Author2,Author3|Price|StockQuantity
+ISBN;Title;Author1,Author2,Author3;Price;StockQuantity
 ```
 
 Example file content:
 ```
-978-3-16-148410-0|The Great Gatsby|F. Scott Fitzgerald|12.99|5
-978-0-06-112008-4|To Kill a Mockingbird|Harper Lee|14.99|3
-978-0-7432-7356-5|1984|George Orwell|13.99|8
+978-3-16-148410-0;The Great Gatsby;F. Scott Fitzgerald;12.99;5
+978-0-06-112008-4;To Kill a Mockingbird;Harper Lee;14.99;3
+978-0-7432-7356-5;1984;George Orwell;13.99;8
 ```
 
 ![File Format Example 1](https://github.com/user-attachments/assets/21693cac-8f0e-4b37-bda3-0c42233122a9)
